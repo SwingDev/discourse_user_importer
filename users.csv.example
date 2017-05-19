@@ -1,3 +1,5 @@
-email;username;name;title;groups
-optimus.prime@example.com;optimus_prime;Optimus Prime;Autobots Supreme Commander;action_masters,autorollers
-megatron@example.com;megatron;Megatron;Decepticon Super Commander;action_masters,basic_beasts
+firstname;lastname;Company;title;email;Office Number;Mobile Number;LinkedIn;Twitter;SMS Phone Number;groups;Join Date
+Thomas;Test;Test;CTO;thomas@example.com;511111919;511111919;https://www.linkedin.com/in/pawe%C5%82-ga%C5%82wa-755621/;;;Finance,HumanResources;42579
+Klement;Test;Test;CTO;klement@example.com;511111919;511111919;https://www.linkedin.com/in/pawe%C5%82-ga%C5%82wa-752188/;;;Finance,Sales;42579
+Kornel;Test;Test;CTO;kornel@example.com;511111919;511111919;https://www.linkedin.com/in/pawe%C5%82-ga%C5%82wa-752188/;;;CustomerSuccess;42579
+
