@@ -9,6 +9,7 @@ namespace :user_importer do
       if user
         new_groups = new_user_groups(new_user['groups']) - user.groups.map(&:name)
         user.groups << parse_user_groups(new_groups)
+        user.custom_fields['company'] = new_user['company']
 
         puts "User #{new_user['email']} already exists and is not imported."
         puts ">> #{new_user['email']} was added to #{new_groups.join(',')}" unless new_groups.empty?
@@ -17,11 +18,15 @@ namespace :user_importer do
           username: new_user['username'] || UserNameSuggester.suggest(new_user['email']),
           email: new_user['email'],
           password: SecureRandom.hex,
-          name: new_user['name'],
+          name: new_user['firstname'] + ' ' + new_user['lastname'],
           title: new_user['title'],
           approved: true,
           approved_by_id: -1,
-          trust_level: 1
+          trust_level: 1,
+          active: true,
+          custom_fields: {
+            company: new_user['company']
+          }
         })
         u.import_mode = true
         u.groups = parse_user_groups new_user['groups']
